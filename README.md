@@ -6,6 +6,7 @@
 
 - [课程总索引](INDEX.md)
 - [第 01 课 - 搜索引擎、SEO、SEM 与拍卖机制](lessons/01-search-engines/README.md)
+- [第 02 课 - Data Driven Marketing、SEM 指标与客户旅程](lessons/02-data-driven-marketing/README.md)
 
 ## 以后每节课的整理规则
 
