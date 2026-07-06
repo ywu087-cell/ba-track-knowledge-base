@@ -1,264 +1,337 @@
-# Lesson 01 - Search Engines, SEO, SEM, and Auctions
+# 第 01 课 - 搜索引擎、SEO、SEM 与拍卖机制
 
-Date: 2026-07-05  
-Source: First BA track class PDF, about search engines  
-Status: Organized notes, not a page-by-page transcript
+日期：2026-07-05  
+来源：BA track 第一节课 PDF，主题是搜索引擎  
+整理方式：中文解释为主，保留关键英文术语；不是逐页照搬 PDF
 
-## One-Line Summary
+## 一句话总结
 
-This lesson explains how search engines find, rank, and monetize information: organic ranking is handled through crawling, indexing, retrieval, and ranking models, while paid search uses SEM, CPC/PPC, Ad Rank, Quality Score, and auction rules.
+这节课讲的是：搜索引擎如何找到信息、如何给结果排序、企业如何通过自然排名和付费广告获得流量，以及广告位背后的拍卖机制如何影响成本和排名。
 
-## Concept Index
+## 快速目录
 
-- Search Engine: software system for finding information on the web.
-- SERP: Search Engine Results Page, the page where results and ads are shown.
-- Crawling: process of discovering web pages.
-- Index: searchable database built from documents and tokens.
-- Top-k Retrieval: retrieving the most relevant candidate documents before ranking.
-- Ranking Model: algorithm that orders results.
-- Tokenization: splitting text into searchable terms.
-- Term Frequency (TF): how often a query term appears in a document.
-- Inverse Document Frequency (IDF): lower weight for common terms, higher weight for rarer terms.
-- SEO: Search Engine Optimization, improving organic visibility.
-- SEM: Search Engine Marketing, increasing visibility mainly through paid search.
-- CPC / PPC: Cost Per Click / Pay Per Click.
-- Ad Rank: paid-search ranking score based on bid, ad quality, thresholds, context, and extensions.
-- Quality Score: estimate of ad and landing-page relevance and usefulness.
-- First-Price Auction: winner pays their own bid.
-- Vickrey Auction: highest bidder wins but pays the second-highest bid.
+1. 搜索引擎是什么
+2. 为什么排名很重要
+3. 搜索引擎的工作流程
+4. 从 Boolean Search 到 TF-IDF
+5. SEO 排名因素
+6. SEM 与付费搜索
+7. Google Ad Rank
+8. 广告展示位置和门槛
+9. 拍卖机制
+10. BA 视角总结
 
-## 1. Search Engine Basics
+## 核心概念索引
 
-A search engine is not just a website with a search box. It is a system that discovers information, organizes it, and returns ranked answers to a user query. The result page is called a SERP, and it can contain organic links, images, files, shopping results, and ads.
+- 搜索引擎 (Search Engine)：用来在互联网上搜索信息的软件系统。
+- 搜索结果页 (Search Engine Results Page, SERP)：用户输入查询后看到的结果页面。
+- 爬取 (Crawling)：搜索引擎发现网页的过程。
+- 索引 (Index)：把网页内容整理成可搜索数据库。
+- 检索 (Retrieval)：根据用户查询，从索引中找出候选结果。
+- 排名模型 (Ranking Model)：决定结果先后顺序的算法。
+- 分词 (Tokenization)：把文本拆成一个个可搜索的词或 token。
+- 词频 (Term Frequency, TF)：某个词在文档中出现的次数。
+- 逆文档频率 (Inverse Document Frequency, IDF)：越常见的词权重越低，越稀有的词权重越高。
+- SEO (Search Engine Optimization)：提升自然搜索排名和可见度。
+- SEM (Search Engine Marketing)：通过付费搜索广告提升可见度。
+- CPC / PPC：按点击付费，Cost Per Click / Pay Per Click。
+- 广告排名 (Ad Rank)：决定广告是否展示、展示在哪里的分数。
+- 质量分 (Quality Score)：广告和落地页相关性、体验质量的估计。
+- 第一价格拍卖 (First-price Auction)：赢的人支付自己出的价格。
+- Vickrey auction：最高出价者获胜，但支付第二高价格。
 
-The course starts with the market context: search is dominated globally by a few major platforms, and digital advertising has become a large revenue channel. This matters for BA work because search is both a user-acquisition channel and a data-rich business process.
+## 1. 搜索引擎是什么
 
-Key BA angle:
+搜索引擎不是一个简单的搜索框。它背后是一套系统：先发现网页，再整理网页，再根据用户输入的关键词返回排序后的结果。
 
-- Search engines convert user intent into ranked options.
-- Ranking affects visibility, traffic, and revenue.
-- Search behavior creates measurable signals, such as clicks, impressions, and conversion paths.
+用户看到的页面叫 SERP，也就是 Search Engine Results Page。SERP 里可能有：
 
-## 2. Why Ranking Matters
+- 自然搜索结果。
+- 图片、购物、新闻等垂直结果。
+- 付费广告。
+- 本地商家信息。
 
-Users do not inspect search results evenly. Heatmap examples show that attention concentrates near the upper-left area and top results. If a listing is outside this high-attention zone, the chance of being seen drops sharply.
+课程一开始提到全球搜索引擎市场份额和数字广告收入，是为了说明搜索引擎不只是技术工具，也是非常重要的商业入口。谁能被用户搜到，谁就更容易获得流量、客户和收入。
 
-This creates a business problem:
+BA 视角：
 
-- A good product or page can underperform if it is not visible.
-- Ranking position changes traffic volume.
-- Ranking quality affects user satisfaction because poor results reduce trust.
+- 搜索引擎把用户意图转化成一组排序结果。
+- 排名越靠前，曝光和点击机会越大。
+- 搜索行为可以被量化，比如 impression、click、CTR、conversion。
 
-For BA analysis, ranking should be treated as a funnel problem:
+## 2. 为什么排名很重要
 
-1. Query entered.
-2. Result shown.
-3. Result noticed.
-4. Result clicked.
-5. User completes the desired action.
+课程用眼动热力图说明：用户注意力集中在搜索结果页左上方和前几个结果。也就是说，就算你的网页或产品本身不错，如果排名太靠后，用户可能根本看不到。
 
-## 3. Search Engine Optimization Workflow
+这对业务的影响很直接：
 
-The lesson describes a simplified search engine pipeline:
+- 排名影响曝光。
+- 曝光影响点击。
+- 点击影响转化。
+- 转化最终影响收入。
 
-1. The web contains many documents.
-2. A crawler discovers pages.
-3. An indexer turns pages into searchable data.
-4. A user query is matched against the index.
-5. Candidate documents are retrieved.
-6. A ranking model orders the results.
-7. The results page is shown to the user.
-8. User behavior and evaluation data can feed learning and improvement.
+可以把搜索排名看成一个漏斗：
 
-The training loop is important:
+1. 用户输入搜索词。
+2. 搜索引擎展示结果。
+3. 用户注意到某个结果。
+4. 用户点击。
+5. 用户进入网站后完成目标行为。
 
-- Define what makes users happy.
-- Create guidelines.
-- Use judges to produce training and test sets.
-- Train or tune the ranking algorithm.
-- Measure user behavior with metrics.
-- Feed results back into the next improvement cycle.
+BA 在分析搜索相关项目时，不能只看最终转化，还要看每一步是否有流失。
 
-## 4. Ranking Algorithms: From Boolean Search to TF-IDF
+## 3. 搜索引擎的工作流程
 
-Early search can be understood as Boolean matching: a document either contains a term or it does not. Operators like AND, OR, and NOT help include or exclude terms, but this approach is too rigid because it does not measure degree of relevance.
+课程给了一个简化流程：
 
-The lesson uses food examples such as "croquets" and "bitterballen" to show why simple matching is not enough. A document can contain the query words many times, but that does not automatically mean it is the most relevant result.
+1. 互联网上有大量文档和网页。
+2. 搜索引擎通过 crawler 抓取网页。
+3. indexer 把网页内容整理进 index。
+4. 用户输入 query。
+5. 系统先做 top-k retrieval，找出一批候选文档。
+6. ranking model 对候选结果排序。
+7. 最终生成 results page。
 
-### Term Frequency (TF)
-
-TF counts how often a term appears in a document. It is useful because repeated query terms often indicate relevance.
-
-Problem:
-
-- Common or low-value words can distort the score.
-- A stop word such as "and" may appear often but should not dominate ranking.
-
-### Inverse Document Frequency (IDF)
-
-IDF reduces the weight of terms that appear in many documents and gives more weight to terms that are rarer across the corpus.
-
-Simplified idea:
+这个流程可以理解为：
 
 ```text
-TF-IDF weight = term frequency x inverse document frequency
+网页 -> 爬取 -> 索引 -> 用户查询 -> 候选结果 -> 排名 -> SERP
 ```
 
-In the course example, "and" appears in many documents, so its IDF is low. More specific terms like "croquets" and "bitterballen" receive more useful weight. This corrects the naive TF score and makes the ranking more aligned with actual relevance.
+课程还讲到训练 ranking algorithm 的思路：
 
-## 5. SEO Ranking Factors
+- 先定义什么结果能让用户满意。
+- 制定评判 guidelines。
+- 让人工 judges 标注 training set 和 test set。
+- 用 training data 训练或调整 ranking algorithm。
+- 用用户行为和 metrics 反馈结果。
+- 继续迭代。
 
-The course emphasizes that search ranking algorithms are not fully public and change constantly. The web itself also changes constantly. SEO professionals infer ranking factors through experiments, observation, and reverse engineering.
+BA 需要关注的是：这里不仅是算法问题，也是指标设计和反馈闭环问题。
 
-### On-Page Factors
+## 4. 从 Boolean Search 到 TF-IDF
 
-On-page factors are signals controlled inside the page:
+早期搜索可以理解为 Boolean Search：一个词是否出现在文档里，答案只有 true / false。可以用 AND、OR、NOT 组合条件。
 
-- Title
-- Header
-- Content
-- Hyperlinks
-- Words and term usage
+问题是，这种方法太粗糙。比如一个文档只要包含关键词就算匹配，但它不一定比另一个文档更相关。
 
-BA interpretation:
+### 4.1 Tokenization
 
-- These are requirements and content-design levers.
-- They should align page structure with user intent.
-- Keyword usage should support meaning, not become keyword stuffing.
+如果要做搜索，第一步通常是把文本拆成 token。token 可以理解为文档里的一个个词。
 
-### Off-Page Factors
+例如系统想知道某篇文档是否包含某个词，就需要先把文本拆开并存进索引。
 
-Off-page factors come from outside the page:
+### 4.2 Term Frequency (TF)
 
-- Anchor text from other pages.
-- Third-party reviews such as Yelp, Google reviews, or TripAdvisor.
-- Link popularity and reputation signals.
+TF 表示一个词在文档中出现了多少次。直觉上，一个查询词出现次数越多，这篇文档可能越相关。
 
-BA interpretation:
+但单看 TF 会出问题：
 
-- Off-page factors reflect trust, authority, and external validation.
-- They are harder to control directly, so they often require partnership, reputation, and customer experience work.
+- 常见词可能出现很多次，但没有实际区分度。
+- 例如 "and" 这种 stop word 出现频率很高，但不能说明文档更相关。
+- 如果只看词频，可能把无意义的重复当成高相关性。
 
-## 6. SEM and Paid Search
+### 4.3 Inverse Document Frequency (IDF)
 
-Search Engine Marketing (SEM) is the paid-search side of traffic acquisition. In this lesson, SEM is distinguished from display ads, print, TV, and radio because it is tied directly to search behavior and SERP visibility.
+IDF 的作用是降低常见词的权重，提高稀有词的权重。
+
+简单理解：
+
+```text
+TF-IDF = 词在文档里出现得多不多 x 这个词在整个文档库里稀不稀有
+```
+
+课程例子里，"and" 在很多文档里都会出现，所以 IDF 很低；而 "croquets"、"bitterballen" 这种更具体的词更有区分度，所以权重更高。
+
+关键 takeaway：
+
+- TF 解决“这个词在本文档里多不多”。
+- IDF 解决“这个词在全体文档里稀不稀有”。
+- TF-IDF 比单纯关键词匹配更接近“相关性”。
+
+## 5. SEO 排名因素
+
+SEO 是 Search Engine Optimization，也就是通过优化内容、结构、链接和信誉，让网页在自然搜索结果里更容易被看到。
+
+课程提醒：搜索引擎算法不是完全公开的，而且会持续变化。网页内容本身也一直在变。所以 SEO 不是一次性工作，而是持续观察、实验和调整。
+
+### 5.1 On-page Factors
+
+On-page factors 是网页内部可控因素，包括：
+
+- Title：标题。
+- Header：页面层级和小标题。
+- Content：正文内容。
+- Hyperlink：页面中的链接。
+- Word：关键词和用词方式。
+
+BA 视角：
+
+- 这些因素可以转化成内容需求和页面验收标准。
+- 页面结构应该服务用户意图，而不是机械堆关键词。
+- 标题、正文、链接都要让搜索引擎和用户更容易理解页面。
+
+### 5.2 Off-page Factors
+
+Off-page factors 是页面外部因素，包括：
+
+- 其他页面链接到你的页面时使用的 anchor text。
+- 第三方评价，例如 Yelp、Google Review、TripAdvisor。
+- 外部链接、口碑和权威性。
+
+BA 视角：
+
+- Off-page factors 更像“外部信任信号”。
+- 它们不完全由网站内部控制，和品牌、用户评价、合作渠道有关。
+- 如果业务目标是提升自然流量，不能只改页面，也要考虑外部声誉和引用。
+
+## 6. SEM 与付费搜索
+
+SEM 是 Search Engine Marketing，课程里主要指通过付费搜索广告提升在 SERP 上的可见度。
+
+它和 SEO 的区别：
+
+| 项目 | SEO | SEM |
+| --- | --- | --- |
+| 流量来源 | 自然搜索 | 付费搜索广告 |
+| 成本形式 | 内容、技术、长期优化成本 | 点击、预算、竞价成本 |
+| 见效速度 | 通常较慢 | 通常较快 |
+| 核心关注 | 排名、内容质量、权威性 | 关键词、出价、质量分、转化 |
 
 ### CPC / PPC
 
-CPC means Cost Per Click, and PPC means Pay Per Click. The advertiser pays when a user clicks the ad. This makes search advertising measurable because cost can be connected to clicks, conversions, and downstream revenue.
+CPC 是 Cost Per Click，PPC 是 Pay Per Click。意思是广告主按点击付费。
 
-Important BA metrics:
+BA 常看的指标：
 
-- Impressions
-- Clicks
-- Click-through rate
-- CPC
-- Conversion rate
-- Cost per acquisition
-- Return on ad spend
+- Impressions：展示次数。
+- Clicks：点击次数。
+- CTR：点击率。
+- CPC：单次点击成本。
+- Conversion Rate：转化率。
+- CPA：单次获客成本。
+- ROAS：广告支出回报。
 
 ## 7. Google Ad Rank
 
-Ad Rank determines where ads appear and whether they appear at all. The simplified teaching formula is:
+Ad Rank 决定广告是否展示，以及展示在什么位置。
+
+课程中的简化公式：
 
 ```text
 Ad Rank = Max CPC Bid x Quality Score
 ```
 
-But the lesson also notes broader factors:
+也就是说，广告排名不只看你愿意出多少钱，还看广告质量。
 
-- Bid amount
-- Auction-time ad quality
-- Expected click-through rate
-- Ad relevance
-- Landing page experience
-- Ad Rank thresholds
-- User search context, such as location, device, search terms, and other signals
-- Expected impact of ad extensions and formats
+影响 Ad Rank 的因素包括：
 
-Key insight:
+- Bid amount：出价。
+- Auction-time ad quality：拍卖发生时广告质量。
+- Expected CTR：预期点击率。
+- Ad relevance：广告和搜索词的相关性。
+- Landing page experience：落地页体验。
+- Ad Rank thresholds：广告展示门槛。
+- Context：搜索场景，例如位置、设备、搜索词、用户信号。
+- Ad extensions：广告扩展信息的预期影响。
 
-- A higher bid alone does not guarantee the top ad position.
-- A more relevant ad with a stronger landing page can win a better position at a lower effective price.
+关键 takeaway：
 
-This matters for BA because paid search performance is not only a budgeting problem. It is also a product, content, targeting, and landing-page quality problem.
+- 出价高不一定排名第一。
+- 质量高、相关性强、落地页体验好的广告，可能用更低价格拿到更好位置。
+- SEM 不是纯预算问题，也涉及产品、页面、文案和用户体验。
 
-## 8. Ad Position and Thresholds
+## 8. 广告展示位置和门槛
 
-The course gives an example where advertisers have Ad Rank scores such as 80, 50, 30, 10, and 5. If the threshold for showing above organic results is 40, only the advertisers with 80 and 50 can appear above the results.
+课程举了一个例子：几个广告主的 Ad Rank 分别是 80、50、30、10、5。
 
-If the threshold for showing below results is 8, advertisers with 30 and 10 may still appear below. The advertiser with 5 does not show at all.
+如果出现在自然结果上方的最低门槛是 40，那么只有 80 和 50 能展示在上方。
 
-Key takeaway:
+如果出现在自然结果下方的最低门槛是 8，那么 30 和 10 可能还能展示在下方，而 5 完全无法展示。
 
-- Position is an auction order, not a fixed visual location.
-- Thresholds decide whether an ad is eligible for a placement area.
-- Low Ad Rank can mean no impression, even if the advertiser is willing to pay something.
+这说明：
 
-## 9. Auction Concepts
+- 广告位置不是固定坑位，而是由 auction order 和 threshold 共同决定。
+- Ad Rank 太低时，即使出价了也可能没有展示。
+- “平均排名”表示的是拍卖顺序，不一定等于页面上的绝对位置。
 
-The lesson closes by connecting SEM to auction design.
+## 9. 拍卖机制
 
-### First-Price Auction
+课程最后把 SEM 和拍卖机制联系起来。
 
-In a first-price auction, the winner pays exactly what they bid. This encourages strategic shading: bidders avoid revealing their true maximum value because overbidding can force them to pay too much.
+### 9.1 First-price Auction
 
-BA takeaway:
+First-price auction 指最高出价者获胜，并支付自己出的价格。
 
-- First-price rules create incentive problems.
-- Participants think about competitors' bids, not only their own value.
+问题是：参与者不一定愿意报真实价值。因为如果你愿意最多付 1000，但你报 1000 且赢了，就真的要付 1000。你会想猜别人出多少，然后只比别人高一点点。
 
-### Vickrey Auction
+BA takeaway：
 
-A Vickrey auction is a sealed-bid auction where the highest bidder wins but pays the second-highest bid.
+- 第一价格拍卖会鼓励策略性出价。
+- 用户行为不只取决于真实价值，也取决于对其他人行为的猜测。
 
-Example:
+### 9.2 Vickrey Auction
+
+Vickrey auction 是密封投标拍卖：最高出价者获胜，但支付第二高价格。
+
+例子：
 
 ```text
-A bids 1000
-B bids 800
-C bids 600
+A 出价 1000
+B 出价 800
+C 出价 600
 
-A wins and pays 800
+A 获胜，但支付 800
 ```
 
-The lesson uses this to show why second-price logic can reduce the penalty for truthful bidding. If you bid too high, you still pay the second price; if you bid too low, you may lose an item you actually value.
+这样做的逻辑是：鼓励参与者更接近真实价值出价。
 
-This connects to paid search because ad auctions need to balance advertiser incentives, platform revenue, ad relevance, and user experience.
+如果你报太高，最终支付的是第二高价，不一定被惩罚；如果你报太低，可能会错失本来值得买的东西。
 
-## 10. BA Takeaways
+课程把它和广告拍卖联系起来，是为了说明：平台要设计一种机制，同时平衡广告主出价、平台收入、广告质量和用户体验。
 
-- Search is a matching and ranking system, not just a keyword lookup.
-- Organic ranking and paid ranking both depend on relevance.
-- SEO requires both content structure and external authority.
-- SEM requires budget, targeting, ad quality, and landing-page quality.
-- Auction rules shape participant behavior.
-- Metrics are essential: impressions, clicks, CTR, CPC, conversion, and revenue connect search behavior to business outcomes.
+## 10. BA 视角总结
 
-## Review Questions
+这节课对 BA 最有价值的不是公式本身，而是背后的业务逻辑：
 
-1. What is the difference between crawling, indexing, retrieval, and ranking?
-2. Why does a high term frequency not always mean a document is relevant?
-3. How does IDF reduce the impact of common terms?
-4. What is the difference between on-page and off-page SEO factors?
-5. Why can a lower bid sometimes beat a higher bid in paid search?
-6. What does Quality Score represent?
-7. How do Ad Rank thresholds affect whether an ad appears?
-8. Why does a first-price auction encourage strategic bidding?
-9. Why does a Vickrey auction make truthful bidding more attractive?
-10. As a BA, which metrics would you monitor to evaluate search marketing performance?
+- 搜索是“用户意图 -> 结果排序 -> 点击/转化”的系统。
+- SEO 和 SEM 都在争夺 SERP 上的可见度。
+- 排名问题可以拆成指标问题：展示、点击、点击率、转化、收入。
+- TF-IDF 说明“相关性”可以被量化，但量化方式会影响结果。
+- Ad Rank 说明商业系统不只看钱，也看质量和用户体验。
+- 拍卖机制说明规则设计会改变参与者行为。
 
-## Quick Glossary
+## 复习问题
 
-| Term | Meaning |
+1. Crawling、Indexing、Retrieval、Ranking 分别是什么意思？
+2. 为什么只看 Term Frequency 可能会误判相关性？
+3. IDF 为什么能降低 stop word 的影响？
+4. On-page SEO 和 Off-page SEO 的区别是什么？
+5. SEM 和 SEO 的核心区别是什么？
+6. 为什么出价更高的广告不一定排在更前？
+7. Quality Score 主要反映什么？
+8. Ad Rank threshold 会如何影响广告是否展示？
+9. First-price auction 为什么会导致策略性出价？
+10. Vickrey auction 为什么更鼓励真实出价？
+11. 如果你是 BA，要评估一个 SEM campaign，你会看哪些指标？
+
+## 术语表
+
+| 术语 | 中文理解 |
 | --- | --- |
-| SERP | Search Engine Results Page |
-| SEO | Organic optimization for better search visibility |
-| SEM | Paid search marketing |
-| TF | Count of query-term appearances in a document |
-| IDF | Weight that downplays terms appearing in many documents |
-| CPC | Cost paid per ad click |
-| PPC | Pay-per-click advertising model |
-| Ad Rank | Score used to determine paid ad position and eligibility |
-| Quality Score | Estimate of ad and landing-page relevance and usefulness |
-| Vickrey Auction | Auction where highest bidder wins and pays the second-highest bid |
+| Search Engine | 搜索引擎，用来发现、索引并排序信息 |
+| SERP | 搜索结果页 |
+| Crawling | 爬取网页 |
+| Index | 搜索引擎建立的可查询数据库 |
+| Top-k Retrieval | 先找出最相关的一批候选结果 |
+| Ranking Model | 对候选结果排序的模型 |
+| Tokenization | 把文本拆成词或 token |
+| TF | 某个词在文档中出现的频率 |
+| IDF | 衡量一个词在整个文档库中稀有程度的权重 |
+| SEO | 提升自然搜索可见度 |
+| SEM | 通过付费搜索提升可见度 |
+| CPC / PPC | 按点击付费 |
+| Ad Rank | 决定广告展示资格和位置的分数 |
+| Quality Score | 广告相关性和落地页质量的估计 |
+| First-price Auction | 最高出价者支付自己的出价 |
+| Vickrey Auction | 最高出价者获胜，但支付第二高价格 |
