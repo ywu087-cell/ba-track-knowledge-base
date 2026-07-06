@@ -1,20 +1,20 @@
-# BA Track Knowledge Base
+# BA Track 知识库
 
-This repository organizes BA track lessons into structured notes, indexes, and review prompts.
+这个仓库用来整理 BA track 每节课的学习笔记。默认风格是：**中文解释为主，英文专业术语保留在括号里**，方便复习、检索和之后做面试/作业准备。
 
-## Course Index
+## 课程入口
 
-- [Full lesson index](INDEX.md)
-- [Lesson 01 - Search Engines, SEO, SEM, and Auctions](lessons/01-search-engines/README.md)
+- [课程总索引](INDEX.md)
+- [第 01 课 - 搜索引擎、SEO、SEM 与拍卖机制](lessons/01-search-engines/README.md)
 
-## How This Knowledge Base Is Organized
+## 以后每节课的整理规则
 
-Each lesson should include:
+每次你给一节课 PDF，我会按同一套结构整理：
 
-1. A short lesson summary.
-2. A concept index.
-3. Structured notes written in our own words.
-4. Key terms with English terminology preserved.
-5. Review questions for later study.
+1. 先生成课程索引，不照搬 PDF。
+2. 用中文解释核心概念，保留关键英文术语。
+3. 把课程内容拆成可复习的小节。
+4. 补充 BA 视角：指标、业务逻辑、分析重点。
+5. 最后加复习问题和术语表。
 
-The source PDFs are used as input material only. Notes should summarize, reorganize, and explain the ideas rather than copy the PDF page by page.
+PDF 只作为原始材料，不会逐页复制进仓库。
