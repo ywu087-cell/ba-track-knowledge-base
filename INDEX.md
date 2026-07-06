@@ -1,42 +1,51 @@
-# BA Track Lesson Index
+# BA Track 课程总索引
 
-## Lessons
+## 课程列表
 
-| No. | Lesson | Topic | Status | Notes |
+| 课次 | 主题 | 内容范围 | 状态 | 笔记 |
 | --- | --- | --- | --- | --- |
-| 01 | [Search Engines, SEO, SEM, and Auctions](lessons/01-search-engines/README.md) | Search engine basics, ranking, SEO, paid search, ad auctions | Complete | Created from the first BA track class PDF on 2026-07-05 |
+| 01 | 搜索引擎、SEO、SEM 与拍卖机制 | 搜索引擎基础、排名、TF-IDF、SEO、SEM、广告排名、拍卖机制 | 已整理 | [进入笔记](lessons/01-search-engines/README.md) |
 
-## Topic Index
+## 主题索引
 
-- Search Engine
-  - Definition
-  - Search Engine Results Pages (SERPs)
-  - Web crawling and indexing
-- SEO
-  - Ranking importance
-  - Top-k retrieval
-  - Ranking model
-  - Tokenization
-  - Term Frequency (TF)
-  - Inverse Document Frequency (IDF)
-  - On-page factors
-  - Off-page factors
-- SEM
-  - Paid search
-  - CPC / PPC
-  - Google Ad Rank
-  - Quality Score
-  - Auction thresholds
-- Auctions
-  - First-price auction
-  - Vickrey auction
-  - Second-price logic
+### 搜索引擎基础
 
-## Update Rule
+- 搜索引擎 (Search Engine)
+- 搜索结果页 (SERP)
+- 爬取 (Crawling)
+- 索引 (Index)
+- 检索 (Retrieval)
+- 排名模型 (Ranking Model)
 
-When a new lesson PDF is added, create one lesson folder and update this file with:
+### SEO
 
-1. Lesson number and title.
-2. Main topic tags.
-3. Link to the structured lesson note.
-4. Any formulas, frameworks, or business-analysis concepts that should be searchable later.
+- 搜索排名的重要性
+- Top-k retrieval
+- 分词 (Tokenization)
+- 词频 (Term Frequency, TF)
+- 逆文档频率 (Inverse Document Frequency, IDF)
+- 页面内因素 (On-page Factors)
+- 页面外因素 (Off-page Factors)
+
+### SEM
+
+- 搜索引擎营销 (Search Engine Marketing, SEM)
+- 点击付费 (Cost Per Click, CPC / Pay Per Click, PPC)
+- 广告排名 (Google Ad Rank)
+- 质量分 (Quality Score)
+- 广告展示门槛 (Ad Rank Thresholds)
+
+### 拍卖机制
+
+- 第一价格拍卖 (First-price Auction)
+- Vickrey auction
+- 第二价格逻辑 (Second-price Logic)
+
+## 更新规则
+
+以后每新增一节课，我会同步更新：
+
+1. 课程列表。
+2. 主题索引。
+3. 新课笔记链接。
+4. 公式、框架、指标和 BA 分析要点。
