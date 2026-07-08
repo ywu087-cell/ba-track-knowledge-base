@@ -6,6 +6,7 @@
 | --- | --- | --- | --- | --- |
 | 01 | 搜索引擎、SEO、SEM 与拍卖机制 | 搜索引擎基础、排名、TF-IDF、SEO、SEM、广告排名、拍卖机制 | 已整理 | [进入笔记](lessons/01-search-engines/README.md) |
 | 02 | Data Driven Marketing、SEM 指标与客户旅程 | Amazon Prime Video 数据挑战、Actual CPC、CTR/CVR/CPA、A/B testing、SEM vs SEO、Customer Journey、Digital Marketing Vehicles | 已整理 | [进入笔记](lessons/02-data-driven-marketing/README.md) |
+| 03 | 数字营销渠道、预算分配与归因模型 | Display Ads、Social Media、Affiliate Marketing、Comparison Shopping Engine、Diminishing Return、Marketing Attribution、Machine Learning Attribution | 已整理 | [进入笔记](lessons/03-digital-marketing-attribution/README.md) |
 
 ## 主题索引
 
@@ -84,6 +85,31 @@
 - 社交媒体营销 (Social Media Marketing)
 - 展示广告 (Display Advertising)
 - 数字营销渠道 (Digital Marketing Vehicles)
+- 广告位卖方 (Ad Seller / Publisher)
+- 广告主 (Advertiser / Ad Buyer)
+- 广告中介 (Ad Broker / Ad Network)
+- YouTube 广告
+- 联盟营销 (Affiliate Marketing)
+- 比价购物引擎 (Comparison Shopping Engine)
+- 默认排序 (Default Sort)
+- 边际收益递减 (Diminishing Return)
+
+### 营销归因
+
+- 营销归因 (Marketing Attribution)
+- 转化路径 (Conversion Path)
+- 多触点路径 (Multi-touch Path)
+- 触点 (Touchpoint)
+- 单触点归因 (Single Source Attribution / Single Touch Attribution)
+- 最后触点归因 (Last Touch Attribution)
+- 分数归因 (Fractional Attribution)
+- 位置归因 (Position-based Attribution)
+- 数据驱动归因 (Data-driven Attribution)
+- 机器学习归因 (Algorithmic Attribution / Probabilistic Attribution)
+- 归因窗口 (Attribution Window)
+- 广告支出回报 (Return on Ad Spend, ROAS)
+- 单条线索成本 (Cost Per Lead, CPL)
+- 边际 ROAS (Marginal ROAS)
 
 ## 更新规则
 
