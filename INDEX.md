@@ -8,6 +8,12 @@
 | 02 | Data Driven Marketing、SEM 指标与客户旅程 | Amazon Prime Video 数据挑战、Actual CPC、CTR/CVR/CPA、A/B testing、SEM vs SEO、Customer Journey、Digital Marketing Vehicles | 已整理 | [进入笔记](lessons/02-data-driven-marketing/README.md) |
 | 03 | 数字营销渠道、预算分配与归因模型 | Display Ads、Social Media、Affiliate Marketing、Comparison Shopping Engine、Diminishing Return、Marketing Attribution、Machine Learning Attribution | 已整理 | [进入笔记](lessons/03-digital-marketing-attribution/README.md) |
 
+## 项目案例
+
+| 项目 | 主题 | 内容范围 | 状态 | 笔记 |
+| --- | --- | --- | --- | --- |
+| 01 | Amazon Prime Video 观看量预测 | EDA、缺失值识别、特征工程、K-fold、Ridge、Random Forest、Gradient Boosting、模型选择 | 已整理 | [进入项目](projects/01-amazon-prime-video-prediction/README.md) |
+
 ## 主题索引
 
 ### 搜索引擎基础
@@ -55,6 +61,12 @@
 - 类别变量编码 (Categorical Encoding)
 - 模型评估 (Model Evaluation)
 - RMSE、MAE、R-squared
+- Random Forest 回归模型
+- Gradient Boosting 回归模型
+- K 折交叉验证 (K-fold Cross Validation)
+- 特征重要性 (Feature Importance)
+- 对数转换 (Log Transformation)
+- 伪缺失值 (Pseudo-missing Values)
 
 ### 实验与统计检验
 
@@ -119,3 +131,19 @@
 2. 主题索引。
 3. 新课笔记链接。
 4. 公式、框架、指标和 BA 分析要点。
+
+
+## 项目案例
+
+| 项目 | 主题 | 内容范围 | 状态 | 笔记 |
+| --- | --- | --- | --- | --- |
+| 01 | Amazon Prime Video 观看量预测 | EDA、缺失值识别、特征工程、K-fold、Ridge、Random Forest、Gradient Boosting、模型选择 | 已整理 | [进入项目](projects/01-amazon-prime-video-prediction/README.md) |
+
+## 项目相关主题
+
+- Random Forest 回归模型
+- Gradient Boosting 回归模型
+- K 折交叉验证 (K-fold Cross Validation)
+- 特征重要性 (Feature Importance)
+- 对数转换 (Log Transformation)
+- 伪缺失值 (Pseudo-missing Values)
