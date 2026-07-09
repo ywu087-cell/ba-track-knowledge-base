@@ -9,6 +9,10 @@
 - [第 02 课 - Data Driven Marketing、SEM 指标与客户旅程](lessons/02-data-driven-marketing/README.md)
 - [第 03 课 - 数字营销渠道、预算分配与归因模型](lessons/03-digital-marketing-attribution/README.md)
 
+## 项目案例
+
+- [项目 01 - Amazon Prime Video 观看量预测](projects/01-amazon-prime-video-prediction/README.md)
+
 ## 以后每节课的整理规则
 
 每次你给一节课 PDF，我会按同一套结构整理：
