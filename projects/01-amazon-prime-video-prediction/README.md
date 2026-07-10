@@ -41,7 +41,6 @@
 
 相关 notebook：
 
-- [amazon_prime_video_prediction.ipynb](amazon_prime_video_prediction.ipynb)
 - [NOTEBOOK.md](NOTEBOOK.md)：从 Colab 导出的详细复习版，保留主要代码、关键输出和解释。
 
 ## 数据字段理解
