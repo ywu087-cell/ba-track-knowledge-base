@@ -39,6 +39,10 @@
 
 因为 `cvt_per_day` 是连续数值，所以这是一个监督学习中的回归问题 (regression problem)，不是分类问题。
 
+相关 notebook：
+
+- [amazon_prime_video_prediction.ipynb](amazon_prime_video_prediction.ipynb)
+- [NOTEBOOK.md](NOTEBOOK.md)：从 Colab 导出的详细复习版，保留主要代码、关键输出和解释。
 
 ## 数据字段理解
 
