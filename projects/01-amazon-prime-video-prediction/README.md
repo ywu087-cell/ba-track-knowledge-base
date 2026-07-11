@@ -15,6 +15,7 @@
 7. [BA 视角总结](#ba-视角总结)
 8. [复习问题](#复习问题)
 9. [术语表](#术语表)
+10. [改进指南](IMPROVEMENTS.md)
 
 ## 核心概念索引
 
@@ -27,6 +28,9 @@
 - 伪缺失值 (Pseudo-missing Values)
 - 训练集与测试集 (Train/Test Split)
 - K 折交叉验证 (K-fold Cross Validation)
+- 标准化 (Standardization)
+- 网格搜索 (Grid Search / GridSearchCV)
+- 特征重要性 (Feature Importance)
 - 随机森林 (Random Forest)
 - 梯度提升 (Gradient Boosting)
 - 平均绝对误差 (MAE)
@@ -42,6 +46,7 @@
 相关 notebook：
 
 - [NOTEBOOK.md](NOTEBOOK.md)：从 Colab 导出的详细复习版，保留主要代码、关键输出和解释。
+- [IMPROVEMENTS.md](IMPROVEMENTS.md)：基于老师版本补充的改进实验，包含伪缺失处理、稀有 genre 合并、正确标准化、GridSearchCV 和特征重要性。
 
 ## 数据字段理解
 
