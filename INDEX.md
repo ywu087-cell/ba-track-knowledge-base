@@ -12,7 +12,7 @@
 
 | 项目 | 主题 | 内容范围 | 状态 | 笔记 |
 | --- | --- | --- | --- | --- |
-| 01 | Amazon Prime Video 观看量预测 | EDA、缺失值识别、特征工程、K-fold、Ridge、Random Forest、Gradient Boosting、模型选择 | 已整理 | [进入项目](projects/01-amazon-prime-video-prediction/README.md) |
+| 01 | Amazon Prime Video 观看量预测 | EDA、伪缺失值、特征工程、K-fold、Ridge、Random Forest、Gradient Boosting、GridSearchCV、特征重要性 | 已整理（含改进指南） | [进入项目](projects/01-amazon-prime-video-prediction/README.md) |
 
 ## 主题索引
 
@@ -67,6 +67,8 @@
 - 特征重要性 (Feature Importance)
 - 对数转换 (Log Transformation)
 - 伪缺失值 (Pseudo-missing Values)
+- 标准化 (Standardization)
+- 网格搜索 (Grid Search / GridSearchCV)
 
 ### 实验与统计检验
 
@@ -131,19 +133,3 @@
 2. 主题索引。
 3. 新课笔记链接。
 4. 公式、框架、指标和 BA 分析要点。
-
-
-## 项目案例
-
-| 项目 | 主题 | 内容范围 | 状态 | 笔记 |
-| --- | --- | --- | --- | --- |
-| 01 | Amazon Prime Video 观看量预测 | EDA、缺失值识别、特征工程、K-fold、Ridge、Random Forest、Gradient Boosting、模型选择 | 已整理 | [进入项目](projects/01-amazon-prime-video-prediction/README.md) |
-
-## 项目相关主题
-
-- Random Forest 回归模型
-- Gradient Boosting 回归模型
-- K 折交叉验证 (K-fold Cross Validation)
-- 特征重要性 (Feature Importance)
-- 对数转换 (Log Transformation)
-- 伪缺失值 (Pseudo-missing Values)
