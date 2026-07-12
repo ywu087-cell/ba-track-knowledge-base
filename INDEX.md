@@ -7,6 +7,7 @@
 | 01 | 搜索引擎、SEO、SEM 与拍卖机制 | 搜索引擎基础、排名、TF-IDF、SEO、SEM、广告排名、拍卖机制 | 已整理 | [进入笔记](lessons/01-search-engines/README.md) |
 | 02 | Data Driven Marketing、SEM 指标与客户旅程 | Amazon Prime Video 数据挑战、Actual CPC、CTR/CVR/CPA、A/B testing、SEM vs SEO、Customer Journey、Digital Marketing Vehicles | 已整理 | [进入笔记](lessons/02-data-driven-marketing/README.md) |
 | 03 | 数字营销渠道、预算分配与归因模型 | Display Ads、Social Media、Affiliate Marketing、Comparison Shopping Engine、Diminishing Return、Marketing Attribution、Machine Learning Attribution | 已整理 | [进入笔记](lessons/03-digital-marketing-attribution/README.md) |
+| 04 | 哈希表、集合与 K-Sum 问题 | Hash Table、Set、Collision、Two Pointers、2 Sum、3 Sum、4 Sum、时间/空间复杂度 | 已整理 | [进入笔记](lessons/04-hash-tables-and-k-sum/README.md) |
 
 ## 项目案例
 
@@ -124,6 +125,21 @@
 - 广告支出回报 (Return on Ad Spend, ROAS)
 - 单条线索成本 (Cost Per Lead, CPL)
 - 边际 ROAS (Marginal ROAS)
+
+### 数据结构与算法
+
+- 哈希表 (Hash Table)
+- 哈希函数 (Hash Function)
+- 哈希冲突 (Collision)
+- 链地址法 (Separate Chaining)
+- 开放寻址法 (Open Addressing)
+- 字典 (Dictionary / `dict`)
+- 集合 (Set / `set`)
+- 补数 (Complement)
+- 双指针 (Two Pointers)
+- Two Sum、Three Sum、Four Sum、K-Sum
+- 时间复杂度 (Time Complexity)
+- 空间复杂度 (Space Complexity)
 
 ## 更新规则
 
