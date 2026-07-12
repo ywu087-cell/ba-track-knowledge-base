@@ -8,6 +8,7 @@
 - [第 01 课 - 搜索引擎、SEO、SEM 与拍卖机制](lessons/01-search-engines/README.md)
 - [第 02 课 - Data Driven Marketing、SEM 指标与客户旅程](lessons/02-data-driven-marketing/README.md)
 - [第 03 课 - 数字营销渠道、预算分配与归因模型](lessons/03-digital-marketing-attribution/README.md)
+- [第 04 课 - 哈希表、集合与 K-Sum 问题](lessons/04-hash-tables-and-k-sum/README.md)
 
 ## 项目案例
 
