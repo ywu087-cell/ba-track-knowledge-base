@@ -8,6 +8,7 @@
 | 02 | Data Driven Marketing、SEM 指标与客户旅程 | Amazon Prime Video 数据挑战、Actual CPC、CTR/CVR/CPA、A/B testing、SEM vs SEO、Customer Journey、Digital Marketing Vehicles | 已整理 | [进入笔记](lessons/02-data-driven-marketing/README.md) |
 | 03 | 数字营销渠道、预算分配与归因模型 | Display Ads、Social Media、Affiliate Marketing、Comparison Shopping Engine、Diminishing Return、Marketing Attribution、Machine Learning Attribution | 已整理 | [进入笔记](lessons/03-digital-marketing-attribution/README.md) |
 | 04 | 哈希表、集合与 K-Sum 问题 | Hash Table、Set、Collision、Two Pointers、2 Sum、3 Sum、4 Sum、时间/空间复杂度 | 已整理 | [进入笔记](lessons/04-hash-tables-and-k-sum/README.md) |
+| 05 | 数据可视化、数据故事与 Tableau 入门 | Data Visualization、EDA、Data Storytelling、Chart Selection、Dashboard、Tableau、Presentation Design | 已整理 | [进入笔记](lessons/05-data-visualization-and-tableau/README.md) |
 
 ## 项目案例
 
@@ -140,6 +141,29 @@
 - Two Sum、Three Sum、Four Sum、K-Sum
 - 时间复杂度 (Time Complexity)
 - 空间复杂度 (Space Complexity)
+
+### 数据可视化与 BI
+
+- 数据可视化 (Data Visualization)
+- 商业智能 (Business Intelligence, BI)
+- 探索性数据分析 (Exploratory Data Analysis, EDA)
+- 数据故事 (Data Storytelling)
+- 结论式标题 (Insight Headline)
+- 标注 (Annotation)
+- 仪表盘 (Dashboard)
+- Tableau
+- 条形图 (Bar Chart)
+- 折线图 (Line Chart)
+- 散点图 (Scatter Plot)
+- 直方图 (Histogram)
+- 箱线图 (Box Plot)
+- 饼图/环形图 (Pie/Donut Chart)
+- 瀑布图 (Waterfall Chart)
+- 热力图 (Heatmap)
+- 地图 (Map)
+- 对数尺度 (Log Scale)
+- 视觉编码 (Visual Encoding)
+- 认知负担 (Cognitive Load)
 
 ## 更新规则
 
