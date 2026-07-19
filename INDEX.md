@@ -9,6 +9,7 @@
 | 03 | 数字营销渠道、预算分配与归因模型 | Display Ads、Social Media、Affiliate Marketing、Comparison Shopping Engine、Diminishing Return、Marketing Attribution、Machine Learning Attribution | 已整理 | [进入笔记](lessons/03-digital-marketing-attribution/README.md) |
 | 04 | 哈希表、集合与 K-Sum 问题 | Hash Table、Set、Collision、Two Pointers、2 Sum、3 Sum、4 Sum、时间/空间复杂度 | 已整理 | [进入笔记](lessons/04-hash-tables-and-k-sum/README.md) |
 | 05 | 数据可视化、数据故事与 Tableau 入门 | Data Visualization、EDA、Data Storytelling、Chart Selection、Dashboard、Tableau、Presentation Design | 已整理 | [进入笔记](lessons/05-data-visualization-and-tableau/README.md) |
+| 06 | 分析师角色、商业问题框架与战略决策 | Analyst Roles、Profitability Framework、4C、Market Entry、Capacity Change、Unit Economics、CPC Forecast | 已整理 | [进入笔记](lessons/06-analyst-roles-and-business-frameworks/README.md) |
 
 ## 项目案例
 
@@ -164,6 +165,30 @@
 - 对数尺度 (Log Scale)
 - 视觉编码 (Visual Encoding)
 - 认知负担 (Cognitive Load)
+
+### 商业分析框架与战略决策
+
+- 运营分析师 (Operations Analyst)
+- 业绩分析师 (Performance Analyst)
+- 探索型分析 (Discovery)
+- 优化分析师 (Optimization Analyst)
+- 衡量分析师 (Measurement Analyst)
+- 数据完整性分析师 (Integrity Analyst)
+- 增量 (Incrementality)
+- 盈利能力框架 (Profitability Framework)
+- 收入问题树 (Revenue Tree)
+- 商业情境框架 (Business Situation Framework)
+- 4C 框架 (Customer, Product, Company, Competition)
+- 市场进入 (Market Entry)
+- 单位经济模型 (Unit Economics)
+- 获客成本 (CAC)
+- 客户终身价值 (LTV)
+- 产能变更框架 (Capacity Change Framework)
+- 需求、供给与扩张成本 (Demand, Supply, Cost of Expansion)
+- 机会成本 (Opportunity Cost)
+- 回收期 (Payback Period)
+- 盈亏平衡点 (Break-even Point)
+- 外包/租赁/分包 (Outsource/Lease/Sub-contract)
 
 ## 更新规则
 
