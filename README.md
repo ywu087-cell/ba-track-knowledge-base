@@ -10,6 +10,7 @@
 - [第 03 课 - 数字营销渠道、预算分配与归因模型](lessons/03-digital-marketing-attribution/README.md)
 - [第 04 课 - 哈希表、集合与 K-Sum 问题](lessons/04-hash-tables-and-k-sum/README.md)
 - [第 05 课 - 数据可视化、数据故事与 Tableau 入门](lessons/05-data-visualization-and-tableau/README.md)
+- [第 06 课 - 分析师角色、商业问题框架与战略决策](lessons/06-analyst-roles-and-business-frameworks/README.md)
 
 ## 项目案例
 
